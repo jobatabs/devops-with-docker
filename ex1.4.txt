@@ -1,0 +1,28 @@
+> docker run -it ubuntu sh -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'
+
+[In another tty]
+
+> docker ps
+
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS     NAMES
+453c2e993bfb   ubuntu    "sh -c 'while true; …"   3 seconds ago   Up 3 seconds             pedantic_agnesi
+
+> docker exec -it pedantic_agnesi bash
+root# apt update
+root# apt install -y curl
+root# exit
+
+[Back to the original tty]
+
+Input website:
+helsinki.fi
+Searching..
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.24.0</center>
+</body>
+</html>
+Input website:
+^C

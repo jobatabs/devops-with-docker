@@ -1,0 +1,76 @@
+Script started on 2025-02-26 12:30:13+02:00 [TERM="rxvt-unicode-256color" TTY="/dev/pts/0" COLUMNS="92" LINES="24"]
+
+> docker -dit devopsdockeruh/simple-web-service:ubuntu
+
+Unable to find image 'devopsdockeruh/simple-web-service:ubuntu' locally
+ubuntu: Pulling from devopsdockeruh/simple-web-service
+5d3b2c2d21bb: Pulling fs layer 
+3fc2062ea667: Pulling fs layer 
+75adf526d75b: Pulling fs layer 
+965d4bbb586a: Pulling fs layer 
+4f4fb700ef54: Pulling fs layer 
+965d4bbb586a: Waiting 
+4f4fb700ef54: Waiting 
+75adf526d75b: Downloading     162B/162B
+75adf526d75b: Verifying Checksum 
+75adf526d75b: Download complete 
+fc2062ea667: Downloading     759B/850B
+3fc2062ea667: Downloading     850B/850B
+3fc2062ea667: Verifying Checksum 
+3fc2062ea667: Download complete 
+5d3b2c2d21bb: Downloading  294.2kB/28.57MB
+5d3b2c2d21bb: Downloading  1.471MB/28.57MB
+5d3b2c2d21bb: Downloading  2.647MB/28.57MB
+5d3b2c2d21bb: Downloading  4.125MB/28.57MB
+4f4fb700ef54: Downloading      32B/32B
+4f4fb700ef54: Download complete 
+5d3b2c2d21bb: Downloading  15.93MB/28.57MB
+965d4bbb586a: Verifying Checksum 
+965d4bbb586a: Download complete 
+5d3b2c2d21bb: Downloading  28.29MB/28.57MB
+5d3b2c2d21bb: Verifying Checksum 
+5d3b2c2d21bb: Download complete 
+5d3b2c2d21bb: Extracting  28.57MB/28.57MB
+5d3b2c2d21bb: Pull complete 
+3fc2062ea667: Extracting     850B/850B
+3fc2062ea667: Pull complete 
+75adf526d75b: Extracting     162B/162B
+75adf526d75b: Pull complete 
+965d4bbb586a: Extracting  5.117MB/5.117MB
+965d4bbb586a: Pull complete 
+4f4fb700ef54: Extracting      32B/32B
+4f4fb700ef54: Pull complete 
+Digest: sha256:d44e1dce398732e18c7c2bad9416a072f719af33498302b02929d4c112e88d2a
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:ubuntu
+f33d6945d16258a6b0859ac62ff4be49e6248bca9ccbf6cdb827e591b21975c9
+
+> docker ps
+
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED         STATUS         PORTS     NAMES
+f33d6945d162   devopsdockeruh/simple-web-service:ubuntu   "/usr/src/app/server"   5 seconds ago   Up 4 seconds             serene_goodall
+                                                                                                                                                                                                      
+> docker exec -it bash
+
+root@f33d6945d162:/usr/src/app# tail -f text.log 
+2025-02-26 10:31:02 +0000 UTC
+2025-02-26 10:31:04 +0000 UTC
+2025-02-26 10:31:06 +0000 UTC
+2025-02-26 10:31:08 +0000 UTC
+2025-02-26 10:31:10 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2025-02-26 10:31:12 +0000 UTC
+2025-02-26 10:31:14 +0000 UTC
+2025-02-26 10:31:16 +0000 UTC
+2025-02-26 10:31:18 +0000 UTC
+2025-02-26 10:31:20 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2025-02-26 10:31:22 +0000 UTC
+2025-02-26 10:31:24 +0000 UTC
+2025-02-26 10:31:26 +0000 UTC
+^C
+
+root@f33d6945d162:/usr/src/app# exit
+exit
+
+
+Script done on 2025-02-26 12:31:41+02:00 [COMMAND_EXIT_CODE="130"]
