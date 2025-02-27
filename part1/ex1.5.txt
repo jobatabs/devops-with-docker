@@ -1,0 +1,17 @@
+REPOSITORY                          TAG               IMAGE ID       CREATED        SIZE
+devopsdockeruh/simple-web-service   ubuntu            4e3362e907d5   3 years ago    83MB
+devopsdockeruh/simple-web-service   alpine            fd312adc88e0   3 years ago    15.7MB
+
+> docker run -d devopsdockeruh/simple-web-service:alpine 
+219bebc7c07473cd501ee39e8eac4e550e57c0d99372e387a023189e12f21832
+
+> docker exec -it 219beb bash
+OCI runtime exec failed: exec failed: unable to start container process: exec: "bash": executable file not found in $PATH: unknown
+
+> docker exec -it 219beb sh  
+
+/usr/src/app # tail -f 
+server    text.log
+
+/usr/src/app # tail -f text.log 
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
