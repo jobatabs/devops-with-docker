@@ -1,0 +1,4 @@
+I am developing a containerized application that will run on HY OpenShift platform.
+It would be easiest to also have the development happen inside the same containers that will be used in production.
+
+The app uses both a Redis cache and a MongoDB server. These are now spun up in docker-composer along with the app itself. Now I don't have to install these server applications locally!
