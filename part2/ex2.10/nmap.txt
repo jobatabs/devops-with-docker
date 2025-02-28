@@ -1,0 +1,17 @@
+Here are my nmap localhost results.
+
+The machine is a fuksiläppäri so ports 22, 111, 631 are open.
+
+I have installed postgres natively for previous development. The 5432 is NOT the container!
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-02-28 23:18 EET
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000074s latency).
+Not shown: 996 closed ports
+PORT     STATE SERVICE
+22/tcp   open  ssh 
+111/tcp  open  rpcbind
+631/tcp  open  ipp
+5432/tcp open  postgresql
+
+Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds

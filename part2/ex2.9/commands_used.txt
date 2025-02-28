@@ -1,0 +1,3 @@
+Had to change REQUEST_ORIGIN 5000 -> 8080 in backend Dockerfile
+
+Had to remove the REACT_APP_BACKEND_URL variable from the frontend Dockerfile
