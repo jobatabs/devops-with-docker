@@ -1,0 +1,18 @@
+services:
+  calculator:
+      build: calculator/
+      ports:
+        - 3000:3000
+      container_name: calculator
+  compute:
+      image: devopsdockeruh/scaling-exercise-compute
+      environment:
+        - VIRTUAL_HOST=compute.localtest.me
+  load-balancer:
+      build: ./load-balancer
+      image: load-balancer
+      volumes:
+        - /run/user/1338223/docker.sock:/tmp/docker.sock:ro
+      ports:
+        - 8080:80
+      container_name: load-balancer
