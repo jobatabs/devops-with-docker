@@ -1,0 +1,12 @@
+services:
+  watchtower:
+    image: containrrr/watchtower
+    environment:
+      -  WATCHTOWER_POLL_INTERVAL=60 # Poll every 60 seconds
+    volumes:
+      - /run/user/1338223/docker.sock:/var/run/docker.sock
+    container_name: watchtower
+  express:
+    image: jobatabs/express
+    ports:
+      - 8080:8080
